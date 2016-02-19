@@ -247,6 +247,6 @@ new BaseJobBuilder(
     steps {
         shell("echo 'Run jmeter tests here'")
     }
-    CommonUtils.addPerformancePublisher(delegate)
+    CommonUtils.addPerformancePublisher(delegate,failedThresholdPositive=15, failedThresholdNegative=25, unstableThresholdPositive=5, unstableThresholdNegative=10)
 }
 ```

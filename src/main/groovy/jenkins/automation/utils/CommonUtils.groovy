@@ -111,7 +111,7 @@ class CommonUtils {
      * @see <a href="https://github.com/cfpb/jenkins-automation/blob/gh-pages/docs/examples.md#common-utils" target="_blank">Common utils</a>
      */
 
-    static void addPerformancePublisher(context, int failedThresholdPositive, int failedThresholdNegative, int unstableThresholdPositive, int unstableThresholdNegative, String unstableResponseTimeThreshold="", String reportPattern="**/results/*.jtl") {
+    static void addPerformancePublisher(context, String reportPattern="**/results/*.jtl", String unstableResponseTimeThreshold="", int failedThresholdPositive, int failedThresholdNegative, int unstableThresholdPositive, int unstableThresholdNegative) {
         context.with {
             configure {
                 it / publishers << 'hudson.plugins.performance.PerformancePublisher' {
