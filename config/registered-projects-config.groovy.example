@@ -1,0 +1,26 @@
+// See README.md for a description of supported configuration parameters
+
+defaultEmail = "example@example.com"
+
+environments {
+    aws {
+        dev {
+            reposToAutomate = [
+                    [projectName: "ccdb-jenkins-automation", url: "https://git-internal/ccdb-jenkins-automation"],
+                    [projectName: "ghe-jenkins-automation", url: "https://git-internal/ops/ghe-jenkins-automation", viewName: "Ops", viewRegex: "ops-.*", emails: "webops@example.com"],
+            ]
+        }
+
+        prod {
+            reposToAutomate = []
+        }
+
+        all {
+            reposToAutomate = [
+                    [projectName: "jks", url: "https://internal-git/jks/jenkins-management-automation", viewName: "jks", viewRegex: "jks-.*", emails: "webops@example.com"],
+            ]
+        }
+    }
+    azure {}
+    heroku {}
+}

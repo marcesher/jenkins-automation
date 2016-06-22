@@ -1,0 +1,17 @@
+environments {
+    aws {
+        dev {
+            globals = """
+               foo=bar
+            """
+        }
+        prod {
+            globals = """
+                foo=bat
+            """
+        }
+        all {}
+    }
+    azure {}
+    heroku {}
+}
