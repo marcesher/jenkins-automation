@@ -28,5 +28,5 @@ params['JAC_HOST'] = System.getProperty('JAC_HOST') ?: 'aws'
 new FileNameFinder().getFileNames('.', pattern).each { String fileName ->
     println "\nprocessing file: $fileName"
     File file = new File(fileName)
-    DslScriptLoader.runDslEngine(file.text, jm)
+    new DslScriptLoader(jm).runScripts([file.text])
 }
